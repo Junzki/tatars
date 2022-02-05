@@ -131,6 +131,11 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+# Generated certificates
+!certs/config.sample.txt
+certs/*
+keygen.sh
+
 # Local editors'
 .vscode/
 .vs/

@@ -2,12 +2,12 @@
 import os
 import unittest
 from cryptography.hazmat.primitives.asymmetric import dh
-from key_exchange.endpoint import Endpoint
+from key_exchange.endpoints.dh import DHEndpoint
 
 
 class TestEndpoint(unittest.TestCase):
 
-    class PatchedEndpoint(Endpoint):
+    class PatchedDHEndpoint(DHEndpoint):
 
         def __eq__(self, other):
             return self._Endpoint__derived == other._Endpoint__derived  # Get private field
@@ -15,8 +15,8 @@ class TestEndpoint(unittest.TestCase):
     def setUp(self) -> None:
         params = dh.generate_parameters(generator=2, key_size=2048)
 
-        p1 = self.PatchedEndpoint(params)
-        p2 = self.PatchedEndpoint(params)
+        p1 = self.PatchedDHEndpoint(params)
+        p2 = self.PatchedDHEndpoint(params)
 
         pub1 = p1.begin_handshake()
         pub2 = p2.begin_handshake()

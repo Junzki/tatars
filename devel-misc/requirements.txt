@@ -1,0 +1,3 @@
+flask-shell-ipython
+ipython
+ipdb

@@ -7,7 +7,7 @@ from cryptography.hazmat.primitives.asymmetric import dh
 from cryptography.hazmat.primitives.kdf.hkdf import HKDF
 
 
-class Endpoint(object):
+class DHEndpoint(object):
     """ AES-256-CBC with Diffie-Hellman exchange endpoint.
     """
     parameters: dh.DHParameters
