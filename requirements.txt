@@ -1,2 +1,3 @@
 -r key_exchange/requirements.txt
 -r server/requirements.txt
+-r storage/requirements.txt
